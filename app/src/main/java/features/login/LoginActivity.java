@@ -47,12 +47,14 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
             String username = tilEmail.getEditText().getText().toString();
             String password = tilPassword.getEditText().getText().toString();
             presenter.loginUser(username, password);
-
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
         }
     };
 
+    @Override
+    public void sucessLogin(String username){
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
 
 
 }

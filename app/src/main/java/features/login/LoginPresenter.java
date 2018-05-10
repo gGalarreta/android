@@ -13,7 +13,11 @@ public class LoginPresenter implements LoginContract.Presenter {
     @Override
     public void loginUser(String username, String password) {
 
-        boolean hasErros = new Random().nextInt(100) < 70 ;
+        boolean success = new Random().nextInt(100) < 70 ;
+        if (success){
+            view.sucessLogin(username);
+        }
 
     }
+
 }
